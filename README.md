@@ -55,6 +55,7 @@ This project involves creating a **smart glove** capable of translating sign lan
      - **AWS Lambda** determines the gesture's meaning and constructs a JSON payload.
      - The JSON is sent to the **OpenAI API** for text-to-speech generation, including dynamic tone modulation (e.g., angry, calm).
      - The OpenAI API generates audio in `.wav` format.
+     - OpenAI API docs: [OpenAI Docs](https://platform.openai.com/docs/guides/text-to-speech)
 
 5. **Return Data Flow**:
    - The generated audio file and the interpreted text are stored in AWS and sent back to the **iPhone app**.
