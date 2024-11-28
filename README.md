@@ -12,15 +12,15 @@
    - [C. iPhone App](#3-iphone-app)
    - [D. AWS Backend](#4-aws-backend)
    - [E. Audio Playback on iPhone](#5-audio-playback-on-iphone)
-5. [Suggestions for Improvement](#suggestions-for-improvement)
-6. [Programming Languages and Frameworks](#6-programming-languages-and-frameworks)
+5. [Programming Languages and Frameworks](#6-programming-languages-and-frameworks)
    - [A. For the ESP32 Firmware](#a-for-the-esp32-firmware)
    - [B. For the Mobile App (Flutter)](#b-for-the-mobile-app-flutter)
    - [C. For the AWS Backend](#c-for-the-aws-backend)
    - [D. For AWS Services](#d-for-aws-services)
-7. [Tools and Libraries](#7-tools-and-libraries)
-8. [Flow of Languages and Tools](#8-flow-of-languages-and-tools)
-9. [Parts List](#9-parts-list)
+6. [Tools and Libraries](#7-tools-and-libraries)
+7. [Flow of Languages and Tools](#8-flow-of-languages-and-tools)
+8. [Parts List](#9-parts-list)
+9. [Suggestions for Improvement](#suggestions-for-improvement)
 
 ---
 
@@ -349,62 +349,6 @@ The ESP32 reads the sensors and sends the processed data via **Bluetooth Low Ene
 
 ---
 
-### **Suggestions for Improvement**
-1. **Error Handling**:
-   - Include fallback phrases if a gesture cannot be recognized.
-
-2. **Scalability**:
-   - Add support for additional gestures or phrases by updating the AWS backend logic.
-
-3. **Real-Time Feedback**:
-   - Use WebSocket or MQTT for faster communication between AWS and the iPhone.
-
-
-
-### **1. Programming Languages and Frameworks**
-#### **A. For the ESP32 Firmware**
-- **C/C++**:
-  - Required to program the ESP32 microcontroller.
-  - Libraries: 
-    - `Arduino.h` (for general ESP32 development).
-    - `BLEDevice.h` (for Bluetooth Low Energy).
-    - `Wire.h` (for I2C communication with the IMU sensor).
-  - Platform: Arduino IDE or PlatformIO (in VS Code).
-
-
-#### **B. For the Mobile App (Flutter)**
-- **Dart**:
-  - Primary language for developing the mobile app in Flutter.
-  - Handles:
-    - UI design.
-    - BLE communication with the ESP32.
-    - API calls to AWS for processing data.
-
-- **Flutter Framework**:
-  - To build a cross-platform app for both iOS and Android.
-  - Plugins required:
-    - `flutter_blue`: For BLE communication.
-    - `http`: To send data to AWS (e.g., API Gateway).
-    - `just_audio`: To play the `.wav` audio file from AWS.
-
-
-#### **C. For the AWS Backend**
-- **Python (Recommended)**:
-  - To write **AWS Lambda** functions for:
-    - Processing data received from the app.
-    - Constructing JSON payloads for the OpenAI API.
-    - Storing audio files in S3.
-  - Libraries: `boto3` (AWS SDK for Python).
-
-- **OpenAI API Integration**:
-  - **Python**: Handle OpenAI API requests for text-to-speech generation.
-
-
-#### **D. For AWS Services**
-- **JSON**:
-  - Used for constructing and parsing data between the app, AWS services, and the OpenAI API.
-
----
 
 ### **2. Tools and Libraries**
 #### **ESP32 Development**
@@ -575,6 +519,64 @@ No physical components are required for AWS integration, as this is software-bas
 
 ---
 
+
+
+### **Suggestions for Improvement**
+1. **Error Handling**:
+   - Include fallback phrases if a gesture cannot be recognized.
+
+2. **Scalability**:
+   - Add support for additional gestures or phrases by updating the AWS backend logic.
+
+3. **Real-Time Feedback**:
+   - Use WebSocket or MQTT for faster communication between AWS and the iPhone.
+
+
+
+### **1. Programming Languages and Frameworks**
+#### **A. For the ESP32 Firmware**
+- **C/C++**:
+  - Required to program the ESP32 microcontroller.
+  - Libraries: 
+    - `Arduino.h` (for general ESP32 development).
+    - `BLEDevice.h` (for Bluetooth Low Energy).
+    - `Wire.h` (for I2C communication with the IMU sensor).
+  - Platform: Arduino IDE or PlatformIO (in VS Code).
+
+
+#### **B. For the Mobile App (Flutter)**
+- **Dart**:
+  - Primary language for developing the mobile app in Flutter.
+  - Handles:
+    - UI design.
+    - BLE communication with the ESP32.
+    - API calls to AWS for processing data.
+
+- **Flutter Framework**:
+  - To build a cross-platform app for both iOS and Android.
+  - Plugins required:
+    - `flutter_blue`: For BLE communication.
+    - `http`: To send data to AWS (e.g., API Gateway).
+    - `just_audio`: To play the `.wav` audio file from AWS.
+
+
+#### **C. For the AWS Backend**
+- **Python (Recommended)**:
+  - To write **AWS Lambda** functions for:
+    - Processing data received from the app.
+    - Constructing JSON payloads for the OpenAI API.
+    - Storing audio files in S3.
+  - Libraries: `boto3` (AWS SDK for Python).
+
+- **OpenAI API Integration**:
+  - **Python**: Handle OpenAI API requests for text-to-speech generation.
+
+
+#### **D. For AWS Services**
+- **JSON**:
+  - Used for constructing and parsing data between the app, AWS services, and the OpenAI API.
+
+---
 
 ### **Summary**
 This setup provides everything needed to build, test, and operate the glove. Optional items like displays or vibration motors can enhance functionality, but they are not necessary for the core project.
