@@ -5,6 +5,7 @@
 ## **Table of Contents**
 1. [SignEase: A Sign Language Glove](#signease-a-sign-language-glove)
 2. [Project Overview](#2-project-overview)
+3. [Flow](#3-flow)
 4. [Detailed Instructions](#detailed-instructions)
    - [A. Hardware Setup](#1-hardware-setup)
    - [B. Firmware for ESP32](#2-firmware-for-esp32)
