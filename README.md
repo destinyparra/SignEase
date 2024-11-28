@@ -485,6 +485,8 @@ The ESP32 reads the sensors and sends the processed data via **Bluetooth Low Ene
 5. **Hot Glue Gun (Optional)**:
    - For attaching sensors and components securely to the glove.
 
+6. **AWS Integration**:
+No physical components are required for AWS integration, as this is software-based. The ESP32’s Wi-Fi module handles all communication with AWS.
 
 ### **5. Optional Components**
 #### **External Display**
@@ -512,10 +514,6 @@ The ESP32 reads the sensors and sends the processed data via **Bluetooth Low Ene
 | Heat Shrink Tubing             | Pack         | $5–$10                   |
 | Hot Glue Gun                   | 1 (Optional) | $10–$15                  |
 
----
-
-### **6. AWS Integration**
-No physical components are required for AWS integration, as this is software-based. The ESP32’s Wi-Fi module handles all communication with AWS.
 
 ---
 
