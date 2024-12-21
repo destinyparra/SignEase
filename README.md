@@ -1,5 +1,5 @@
 # SignEase
- A sign language glove
+ An IoT sign language glove 
 
 
 ## **Table of Contents**
